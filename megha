@@ -1,0 +1,134 @@
+index.html<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry Megha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffe6e6, #ffccff);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: auto;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #ff3399;
+      font-size: 3em;
+    }
+    .letter {
+      background-color: #fff0f5;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 600px;
+      color: #993366;
+      font-size: 1.2em;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(255, 51, 153, 0.3);
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #forgiveBtn {
+      font-size: 1.2em;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 4s infinite ease-in-out;
+    }
+    .heart:before,
+    .heart:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>I'm really sorry, Megha...</h1>
+
+  <div class="letter">
+    <p>Dear Megha,</p>
+    <p>I know I’ve hurt you, and I can't express how much that breaks my heart. You are the most beautiful part of my life, and not a moment goes by that I don’t regret making you feel anything less than deeply loved.</p>
+    <p>You mean the world to me, and all I want is to see you smile again — the smile that lights up my world. Please forgive me. I’m ready to do whatever it takes to make things right and make you happy again.</p>
+    <p>With all my heart,</p>
+    <p><strong>Your always sorry but forever loving person</strong></p>
+    <hr style="margin: 20px 0;">
+    <p><em>Dakh ami ja ja krechi, bhul krechi.</em></p>
+    <p><em>Kintu sotti — amar khub phatbe tui chele bondhu banale.</em></p>
+    <p><em>Ar tui hoyto janis na, kintu ami tor chutiya katchi na.</em></p>
+    <p><em>Ar please, amay jodi aktu khani bhalobasis, banas na chele bondhu.</em></p>
+    <p><strong>Pls Megha... ❤🙏🏼</strong></p>
+  </div>
+
+  <div class="buttons">
+    <button id="forgiveBtn" onclick="forgiveMe()">I forgive you</button>
+    <button id="dontForgiveBtn" onclick="makeForgiveBigger()">I don't forgive you</button>
+  </div>
+
+  <script>
+    let forgiveBtn = document.getElementById('forgiveBtn');
+    let size = 1.2;
+
+    function forgiveMe() {
+      alert("YAY! Thank you, Megha. I’ll do better, I promise.");
+      sendHearts();
+    }
+
+    function makeForgiveBigger() {
+      size += 0.3;
+      forgiveBtn.style.fontSize = size + 'em';
+    }
+
+    function sendHearts() {
+      for (let i = 0; i < 30; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.background = hsl(${Math.random()*360}, 100%, 70%);
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+  </script>
+</body>
+</html>
